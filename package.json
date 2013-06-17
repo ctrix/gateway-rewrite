@@ -2,7 +2,7 @@
   "name": "gateway-rewrite",
   "description": "Middleware to execute CGI scripts with URL rewriting",
   "homepage": "http://github.com/ctrix/gateway-rewrite",
-  "version": "0.1",
+  "version": "0.0.1",
   "repository": {
     "type": "git",
     "url": "git://github.com/ctrix/gateway-rewrite.git"

@@ -1,0 +1,33 @@
+{
+  "name": "gateway-rewrite",
+  "description": "Middleware to execute CGI scripts with URL rewriting",
+  "homepage": "http://github.com/ctrix/gateway-rewrite",
+  "version": "0.1",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/ctrix/gateway-rewrite.git"
+  },
+  "author": {
+    "name": "Massimo Cetra",
+    "url": "http://www.ctrix.it"
+  },
+  "main": "./gateway-rewrite",
+  "keywords": [
+    "connect",
+    "rewrite",
+    "cgi",
+    "php"
+  ],
+  "devDependencies": {
+    "mocha": "~1.4.0",
+    "should": "~1.1.0",
+    "supertest": "~0.2.0"
+  },
+  "readme": "Please see http://github.com/ctrix/gateway-rewrite\n",
+  "readmeFilename": "README.md",
+  "bugs": {
+    "url": "https://github.com/ctrix/gateway-rewrite/issues"
+  },
+  "_id": "gateway-rewrite@0.1",
+  "_from": "gateway-rewrite@~0.1"
+}

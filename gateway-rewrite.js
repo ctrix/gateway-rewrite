@@ -10,7 +10,7 @@ var fs = require('fs'),
     statusExp = /^Status:\s*(\d{3}) (.*)$/i
 
 
-module.exports = function gateway_rewrite(docroot, options, grunt) {
+module.exports = function gateway_rewrite(docroot, options) {
 
     // docroot is required
     if (!docroot) {

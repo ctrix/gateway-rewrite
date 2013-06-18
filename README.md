@@ -21,41 +21,51 @@ var gateway_rw = require('gateway-rewrite');
 
 var rwGateway = function (dir){
     return gateway_rw(require('path').resolve(dir), {
-       rules: [
-          {
-            rule: '^(/api/.+)',
-            cgi:  '/usr/bin/php-cgi',
-            to:   '/api/index.php'
-          }
-        ]},
-        grunt
-    );
-  };
+        rules: [
+            {
+                rule: '^(/api/.+)',
+                cgi:  '/usr/bin/php-cgi',
+                to:   '/api/index.php'
+            },
 
-
-  grunt.initConfig({
-
-   (more here)
-
-    connect: {
-        options: {
-          hostname: 'localhost',
-          port: 9000
-        },
-        livereload: {
-          options: {
-            middleware: function (connect, options) {
-                return [
-                    /* Let's see if the rule matches something to rewrite */
-                    rwGateway(sysConfig.build_dir),
-                    /* Otherwise it's a static file */
-                    mountFolder(connect, sysConfig.build_dir)
-                ];
+            /* Use the following options to match the base path. */
+            {
+                rule: '^/$',
+                cgi:  '/usr/local/opt/php54/bin/php-cgi',
+                to:   '/index.php'
             }
-          }
+        ]}
+    );
+};
+
+
+
+    grunt.initConfig({
+
+        (more here)
+
+        connect: {
+            options: {
+                hostname: 'localhost',
+                port: 9000
+            },
+            livereload: {
+                options: {
+                    middleware: function (connect, options) {
+                        return [
+                            /* Let's see if the rule matches something to rewrite */
+                            rwGateway(sysConfig.build_dir),
+                            /* Otherwise it's a static file */
+                            mountFolder(connect, sysConfig.build_dir)
+                        ];
+                    }
+                }
+            }
         }
-    },
-  });
+
+        (even more grunt options here)
+
+    });
 
 
 ```
